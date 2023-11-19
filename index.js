@@ -1,4 +1,3 @@
-console.log("hello world");
 const { Command } = require('commander');
 
 const { listContacts, getContactById, removeContact, addContact } = require("./contacts");
@@ -20,7 +19,7 @@ async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case 'list':
       const contacts = await listContacts();
-      console.log(contacts);
+      console.table(contacts);
       break;
 
     case 'get':
